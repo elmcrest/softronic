@@ -7,10 +7,10 @@
       <nav class="container mx-auto flex flex-wrap justify-between items-center py-8">
         <div>
           <g-link v-if="theme === 'theme-light'" to="/">
-            <g-image src="../../static/logo.svg" class="w-40" alt="logo" />
+            <g-image src="../../static/logo_main_lightmode.png" class="w-40" alt="logo" />
           </g-link>
           <g-link v-else to="/">
-            <g-image src="../../static/logo_dark_mode.svg" class="w-40" alt="logo" />
+            <g-image src="../../static/logo_main_darkmode.png" class="w-40" alt="logo" />
           </g-link>
         </div>
         <div class="block lg:hidden">
@@ -38,22 +38,7 @@
             <theme-switcher :theme="theme" @themeChanged="updateTheme" />
           </li>
           <li class="mr-8 mb-6 lg:mb-0">
-            <a
-              v-if="$route.path === '/'"
-              href="/#projects"
-              v-scroll-to="'#projects'"
-              class="text-copy-primary hover:text-gray-600"
-            >Projects</a>
-            <g-link v-else to="/#projects" class="text-copy-primary hover:text-gray-600">Projects</g-link>
-          </li>
-          <li class="mr-8 mb-6 lg:mb-0">
-            <a
-              v-if="$route.path === '/'"
-              href="/#about"
-              v-scroll-to="'#about'"
-              class="text-copy-primary hover:text-gray-600"
-            >About</a>
-            <g-link v-else to="/#about" class="text-copy-primary hover:text-gray-600">About</g-link>
+            <g-link to="/blog" class="text-copy-primary hover:text-gray-600">Blog</g-link>
           </li>
           <li class="mr-8 mb-6 lg:mb-0">
             <a
@@ -61,14 +46,17 @@
               href="/#contact"
               v-scroll-to="'#contact'"
               class="text-copy-primary hover:text-gray-600"
-            >Contact</a>
-            <g-link v-else to="/#contact" class="text-copy-primary hover:text-gray-600">Contact</g-link>
-          </li>
-          <li class="mr-8 mb-6 lg:mb-0">
-            <g-link to="/docs" class="text-copy-primary hover:text-gray-600">Docs</g-link>
+            >Stellen</a>
+            <g-link v-else to="/#contact" class="text-copy-primary hover:text-gray-600">Stellen</g-link>
           </li>
           <li>
-            <g-link to="/blog" class="text-copy-primary hover:text-gray-600">Blog</g-link>
+            <a
+              v-if="$route.path === '/'"
+              href="/#leitbild"
+              v-scroll-to="'#leitbild'"
+              class="text-copy-primary hover:text-gray-600"
+            >Leitbild</a>
+            <g-link v-else to="/#leitbild" class="text-copy-primary hover:text-gray-600">Leitbild</g-link>
           </li>
         </ul>
       </nav>
@@ -77,18 +65,18 @@
     <div class="flex-grow">
       <slot />
     </div>
-    <footer class="bg-green-700 text-white">
+    <footer :class="theme === 'theme-light' ? 'bg-white' : 'bg-black'">
       <div class="container mx-auto flex flex-col lg:flex-row items-center justify-between py-8">
-        <div class="mb-8 lg:mb-0">
+        <div :class="theme === 'theme-light' ? 'text-black' : 'text-white'" class="mb-8 lg:mb-0">
           <div>Copyright {{ new Date().getFullYear() }}. All rights reserved.</div>
           <div>
-            <a href="/rss.xml" class="text-white hover:text-gray-400 font-normal">RSS Feed</a> |
-            <a href="/sitemap.xml" class="text-white hover:text-gray-400 font-normal">Sitemap</a>
+            <a href="/rss.xml" :class="theme === 'theme-light' ? 'text-black' : 'text-white'" class="font-normal">RSS Feed</a> |
+            <a href="/sitemap.xml" :class="theme === 'theme-light' ? 'text-black' : 'text-white'" class="font-normal">Sitemap</a>
           </div>
         </div>
         <ul class="flex items-center">
           <li class="mr-8">
-            <a href="mailto:me@example.com" class="text-white hover:text-gray-400">
+            <a href="mailto:me@example.com" :class="theme === 'theme-light' ? 'text-black' : 'text-white'">
               <svg width="25" height="20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M2.5 0h20A2.5 2.5 0 0 1 25 2.5v15a2.5 2.5 0 0 1-2.5 2.5h-20A2.5 2.5 0 0 1 0 17.5v-15C0 1.125 1.125 0 2.5 0zm20 4.225V2.5h-20v1.725l10 5 10-5zm0 2.8l-9.438 4.713a1.25 1.25 0 0 1-1.124 0L2.5 7.025V17.5h20V7.025z"
@@ -102,7 +90,7 @@
             <a
               href="https://youtube.com/drehimself"
               target="_blank"
-              class="text-white hover:text-gray-400"
+              :class="theme === 'theme-light' ? 'text-black' : 'text-white'"
             >
               <svg width="26" height="20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -117,7 +105,7 @@
             <a
               href="https://github.com/drehimself/gridsome-portfolio-starter"
               target="_blank"
-              class="text-white hover:text-gray-400"
+              :class="theme === 'theme-light' ? 'text-black' : 'text-white'"
             >
               <svg width="20" height="19" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -132,7 +120,7 @@
             <a
               href="https://twitter.com/drehimself"
               target="_blank"
-              class="text-white hover:text-gray-400"
+              :class="theme === 'theme-light' ? 'text-black' : 'text-white'"
             >
               <svg width="20" height="17" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -144,7 +132,7 @@
           </li>
 
           <li>
-            <a href="https://instagram.com" target="_blank" class="text-white hover:text-gray-400">
+            <a href="https://instagram.com" target="_blank" :class="theme === 'theme-light' ? 'text-black' : 'text-white'">
               <svg width="20" height="20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M10.002 4.872A5.12 5.12 0 0 0 4.876 10a5.12 5.12 0 0 0 5.126 5.128A5.12 5.12 0 0 0 15.13 10a5.12 5.12 0 0 0-5.127-5.128zm0 8.462A3.34 3.34 0 0 1 6.67 10a3.337 3.337 0 0 1 3.333-3.334A3.337 3.337 0 0 1 13.335 10a3.34 3.34 0 0 1-3.333 3.334zm6.532-8.671c0 .664-.535 1.196-1.195 1.196a1.196 1.196 0 1 1 1.196-1.196zm3.396 1.213c-.076-1.602-.442-3.02-1.615-4.19C17.145.516 15.727.15 14.125.07c-1.65-.093-6.6-.093-8.25 0-1.597.076-3.016.442-4.19 1.611C.512 2.851.151 4.27.07 5.871c-.093 1.652-.093 6.601 0 8.253.076 1.602.442 3.02 1.615 4.19 1.174 1.17 2.588 1.535 4.19 1.616 1.65.093 6.6.093 8.25 0 1.602-.076 3.02-.442 4.19-1.616 1.169-1.17 1.534-2.588 1.615-4.19.093-1.652.093-6.596 0-8.248zm-2.133 10.02a3.375 3.375 0 0 1-1.9 1.9c-1.317.523-4.44.402-5.895.402-1.454 0-4.582.116-5.894-.402a3.375 3.375 0 0 1-1.9-1.9c-.523-1.317-.402-4.441-.402-5.896s-.116-4.583.401-5.895a3.375 3.375 0 0 1 1.901-1.901c1.316-.523 4.44-.402 5.894-.402 1.455 0 4.582-.116 5.894.402a3.375 3.375 0 0 1 1.901 1.9c.522 1.317.402 4.441.402 5.896s.12 4.583-.402 5.895z"
