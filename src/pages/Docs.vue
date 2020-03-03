@@ -18,18 +18,18 @@
 </template>
 
 <page-query>
-query Documentation {
-  docs: allDocumentation (sortBy: "date", order: DESC) {
-    edges {
-      node {
-        id
-        path
-        title
-        excerpt
+  query Documentation {
+    docs: allDocumentation(sortBy: "date", order: DESC) {
+      edges {
+        node {
+          id
+          path
+          title
+          excerpt
+        }
       }
     }
   }
-}
 </page-query>
 
 <script>

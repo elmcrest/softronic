@@ -21,17 +21,17 @@
 </template>
 
 <page-query>
-query Post ($path: String!) {
-  post: post (path: $path) {
-    title
-    date (format: "MMMM D, Y")
-    content
-    tags {
+  query Post($path: String!) {
+    post: post(path: $path) {
       title
-      path
+      date(format: "MMMM D, Y")
+      content
+      tags {
+        title
+        path
+      }
     }
   }
-}
 </page-query>
 
 <script>
