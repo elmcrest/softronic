@@ -1,8 +1,10 @@
 ROOT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
 clean.build: $(ROOT_DIR)
+	@rm -rf .cache
 	@rm -rf dist
 	@rm -rf src/.temp
+	@rm -rf static/rss.xml
 
 clean.modules: $(ROOT_DIR)
 	@rm -rf node_modules
