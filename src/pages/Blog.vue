@@ -14,7 +14,7 @@
         </div>
 
         <div class="mb-8">
-          <g-link :to="post.node.path" class="font-bold uppercase">Read More</g-link>
+          <g-link :to="post.node.path" class="font-bold uppercase">Weiterlesen</g-link>
         </div>
       </div> <!-- end post -->
 
