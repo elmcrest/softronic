@@ -39,22 +39,10 @@
             <g-link to="/blog" class="text-copy-primary hover:text-gray-600">Blog</g-link>
           </li>
           <li class="mr-8 mb-6 lg:mb-0">
-            <a
-              v-if="$route.path === '/'"
-              href="/#contact"
-              v-scroll-to="'#contact'"
-              class="text-copy-primary hover:text-gray-600"
-            >Stellen</a>
-            <g-link v-else to="/#contact" class="text-copy-primary hover:text-gray-600">Stellen</g-link>
+            <g-link to="/stellen" class="text-copy-primary hover:text-gray-600">Stellen</g-link>
           </li>
           <li>
-            <a
-              v-if="$route.path === '/'"
-              href="/#leitbild"
-              v-scroll-to="'#leitbild'"
-              class="text-copy-primary hover:text-gray-600"
-            >Leitbild</a>
-            <g-link v-else to="/#leitbild" class="text-copy-primary hover:text-gray-600">Leitbild</g-link>
+            <g-link to="/leitbild" class="text-copy-primary hover:text-gray-600">Leitbild</g-link>
           </li>
         </ul>
       </nav>
@@ -74,7 +62,7 @@
         </div>
         <ul class="flex items-center">
           <li class="mr-8">
-            <a href="mailto:me@example.com" :class="theme">
+            <a href="mailto:info@mehr-handwerk.de" :class="theme">
               <svg width="25" height="20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M2.5 0h20A2.5 2.5 0 0 1 25 2.5v15a2.5 2.5 0 0 1-2.5 2.5h-20A2.5 2.5 0 0 1 0 17.5v-15C0 1.125 1.125 0 2.5 0zm20 4.225V2.5h-20v1.725l10 5 10-5zm0 2.8l-9.438 4.713a1.25 1.25 0 0 1-1.124 0L2.5 7.025V17.5h20V7.025z"
@@ -83,25 +71,23 @@
               </svg>
             </a>
           </li>
-
           <li class="mr-8">
             <a
-              href="https://youtube.com/drehimself"
+              href="https://twitter.com/mehrHandwerk"
               target="_blank"
               :class="theme"
             >
-              <svg width="26" height="20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <svg width="20" height="17" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path
-                  d="M25.457 3.13c-.3-1.232-1.18-2.203-2.299-2.532C21.13 0 13 0 13 0S4.87 0 2.842.598c-1.119.33-2 1.3-2.299 2.531C0 5.362 0 10.02 0 10.02s0 4.658.543 6.891c.3 1.232 1.18 2.162 2.299 2.49C4.87 20 13 20 13 20s8.13 0 10.158-.598c1.119-.33 2-1.26 2.299-2.49C26 14.677 26 10.02 26 10.02s0-4.658-.543-6.89zM10.34 14.25V5.79l6.795 4.23-6.795 4.23z"
+                  d="M19.807 1.943a8.588 8.588 0 0 1-2.036 2.135 11.918 11.918 0 0 1-.465 3.854 12.085 12.085 0 0 1-1.452 3.177 12.426 12.426 0 0 1-2.318 2.691c-.897.78-1.978 1.402-3.243 1.867-1.265.464-2.618.697-4.06.697-2.27 0-4.348-.618-6.233-1.854.293.034.62.051.98.051 1.885 0 3.565-.588 5.04-1.764a3.915 3.915 0 0 1-2.363-.825 4.038 4.038 0 0 1-1.432-2.039c.276.043.532.064.766.064.36 0 .717-.047 1.068-.14A3.982 3.982 0 0 1 1.73 8.43c-.617-.754-.925-1.63-.925-2.627v-.051c.57.324 1.182.498 1.835.524a4.1 4.1 0 0 1-1.32-1.47 4.078 4.078 0 0 1-.49-1.969c0-.75.185-1.445.553-2.084a11.548 11.548 0 0 0 3.702 3.05 11.163 11.163 0 0 0 4.669 1.271c-.067-.324-.1-.639-.1-.946 0-1.142.395-2.116 1.187-2.92C11.632.402 12.589 0 13.712 0c1.173 0 2.161.435 2.966 1.304a7.878 7.878 0 0 0 2.576-.997 3.997 3.997 0 0 1-1.785 2.275 7.98 7.98 0 0 0 2.338-.639z"
                   fill-rule="nonzero"
                 />
               </svg>
             </a>
           </li>
-
           <li class="mr-8">
             <a
-              href="https://github.com/drehimself/gridsome-portfolio-starter"
+              href="https://github.com/elmcrest/softronic"
               target="_blank"
               :class="theme"
             >
@@ -114,22 +100,7 @@
             </a>
           </li>
 
-          <li class="mr-8">
-            <a
-              href="https://twitter.com/drehimself"
-              target="_blank"
-              :class="theme"
-            >
-              <svg width="20" height="17" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M19.807 1.943a8.588 8.588 0 0 1-2.036 2.135 11.918 11.918 0 0 1-.465 3.854 12.085 12.085 0 0 1-1.452 3.177 12.426 12.426 0 0 1-2.318 2.691c-.897.78-1.978 1.402-3.243 1.867-1.265.464-2.618.697-4.06.697-2.27 0-4.348-.618-6.233-1.854.293.034.62.051.98.051 1.885 0 3.565-.588 5.04-1.764a3.915 3.915 0 0 1-2.363-.825 4.038 4.038 0 0 1-1.432-2.039c.276.043.532.064.766.064.36 0 .717-.047 1.068-.14A3.982 3.982 0 0 1 1.73 8.43c-.617-.754-.925-1.63-.925-2.627v-.051c.57.324 1.182.498 1.835.524a4.1 4.1 0 0 1-1.32-1.47 4.078 4.078 0 0 1-.49-1.969c0-.75.185-1.445.553-2.084a11.548 11.548 0 0 0 3.702 3.05 11.163 11.163 0 0 0 4.669 1.271c-.067-.324-.1-.639-.1-.946 0-1.142.395-2.116 1.187-2.92C11.632.402 12.589 0 13.712 0c1.173 0 2.161.435 2.966 1.304a7.878 7.878 0 0 0 2.576-.997 3.997 3.997 0 0 1-1.785 2.275 7.98 7.98 0 0 0 2.338-.639z"
-                  fill-rule="nonzero"
-                />
-              </svg>
-            </a>
-          </li>
-
-          <li>
+          <!-- <li>
             <a href="https://instagram.com" target="_blank" :class="theme">
               <svg width="20" height="20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -138,7 +109,7 @@
                 />
               </svg>
             </a>
-          </li>
+          </li> -->
         </ul>
       </div>
     </footer>
