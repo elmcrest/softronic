@@ -58,7 +58,7 @@
 
 <static-query>
   {
-    metadata{
+    metadata {
       pathPrefix
     }
   }

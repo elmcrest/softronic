@@ -14,7 +14,7 @@
         </div>
 
         <div class="mb-8">
-          <g-link :to="post.node.path" class="font-bold uppercase">Read More</g-link>
+          <g-link :to="post.node.path" class="font-bold uppercase">Weiterlesen</g-link>
         </div>
       </div> <!-- end post -->
 
@@ -29,25 +29,26 @@
 </template>
 
 <page-query>
-query Posts ($page: Int) {
-  posts: allPost (sortBy: "date", order: DESC, perPage: 3, page: $page) @paginate {
-    totalCount
-    pageInfo {
-      totalPages
-      currentPage
-    }
-    edges {
-      node {
-        id
-        title
-        date (format: "MMMM D, Y")
-        summary
-        timeToRead
-        path
+  query Posts($page: Int) {
+    posts: allPost(sortBy: "date", order: DESC, perPage: 3, page: $page)
+      @paginate {
+      totalCount
+      pageInfo {
+        totalPages
+        currentPage
+      }
+      edges {
+        node {
+          id
+          title
+          date(format: "MMMM D, Y")
+          summary
+          timeToRead
+          path
+        }
       }
     }
   }
-}
 </page-query>
 
 <script>

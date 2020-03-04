@@ -14,9 +14,9 @@ const postcssPlugins = [
 if (process.env.NODE_ENV === 'production') postcssPlugins.push(purgecss())
 
 module.exports = {
-  siteName: 'Gridsome Portfolio Starter',
-  siteDescription: 'A simple portfolio theme for Gridsome powered by Tailwind CSS v1',
-  siteUrl: 'https://gridsome-portfolio-starter.netlify.com',
+  siteName: 'Softronic Haustechnik und Holzbau GmbH',
+  siteDescription: 'Die Internetpräsenz der Firma Softronic aus Mannheim - ihre Dachdeckerei, Zimmerei und Spenglerei',
+  siteUrl: 'https://mehr-handwerk.de',
   plugins: [
     {
       use: '@gridsome/vue-remark',
@@ -26,8 +26,8 @@ module.exports = {
         pathPrefix: '/docs', // Add route prefix. Optional
         template: './src/templates/Documentation.vue', // Optional
         plugins: [
-          [ 'gridsome-plugin-remark-shiki', { theme: 'Material-Theme-Palenight', skipInline: true } ]
-      ],
+          ['gridsome-plugin-remark-shiki', { theme: 'Material-Theme-Palenight', skipInline: true }]
+        ],
       }
     },
     {
@@ -48,15 +48,15 @@ module.exports = {
       options: {
         contentTypeName: 'Post',
         feedOptions: {
-          title: 'Gridsome Portfolio Starter Blog',
-          feed_url: 'https://gridsome-portfolio-starter.netlify.com/rss.xml',
-          site_url: 'https://gridsome-portfolio-starter.netlify.com/'
+          title: 'Softronic Haustechnik und Holzbau GmbH',
+          feed_url: 'https://mehr-handwerk.de/rss.xml',
+          site_url: 'https://mehr-handwerk.de'
         },
         feedItemOptions: node => ({
           title: node.title,
           description: node.summary,
-          url: 'https://gridsome-portfolio-starter.netlify.com' + node.path,
-          author: 'Andre Madarang',
+          url: 'https://mehr-handwerk.de' + node.path,
+          author: 'Softronic Haustechnik und Holzbau GmbH',
           date: node.date
         }),
         output: {
@@ -78,7 +78,7 @@ module.exports = {
   transformers: {
     remark: {
       plugins: [
-        [ 'gridsome-plugin-remark-shiki', { theme: 'Material-Theme-Palenight', skipInline: true } ]
+        ['gridsome-plugin-remark-shiki', { theme: 'Material-Theme-Palenight', skipInline: true }]
       ],
       externalLinksTarget: '_blank',
       externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],

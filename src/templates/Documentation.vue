@@ -11,12 +11,12 @@
 
 <!-- Front-matter fields can be queried from GraphQL layer -->
 <page-query>
-query Documentation ($id: ID!) {
-  documentation(id: $id) {
-    title
-    excerpt
+  query Documentation($id: ID!) {
+    documentation(id: $id) {
+      title
+      excerpt
+    }
   }
-}
 </page-query>
 
 <script>
